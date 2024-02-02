@@ -8,9 +8,9 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     // your code here!
-     if (playerSelection == computerSelection) {
+     if (playerSelection === computerSelection) {
         return "It's a Tie!";
-    } else if (playerSelection == "rock") {
+    } else if (playerSelection === "rock") {
         switch (computerSelection) {
             case "scissors" :
                 return "You Win! Rock beats Scissors";
@@ -19,7 +19,7 @@ function playRound(playerSelection, computerSelection) {
                 return "You Lose! Paper beats Rock";
             break;
         }
-    } else if (playerSelection == "paper") {
+    } else if (playerSelection === "paper") {
         switch (computerSelection) {
             case "rock" :
                 return "You Win! Paper beats Rock";
@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
                 return "You Lose! Scissors beats Paper";
             break;
         }
-    } else if (playerSelection == "scissors") {
+    } else if (playerSelection === "scissors") {
         switch (computerSelection) {
             case "rock" :
                 return "You Lose! Rock beats Scissors";
@@ -39,11 +39,18 @@ function playRound(playerSelection, computerSelection) {
         }
     }
   }
+
+  function playGame() {
+    const playerSelection = prompt("rock, paper, or scissors ?", "rock").toLowerCase();
+    console.log(playerSelection)
+    const computerSelection = getComputerChoice();
+    console.log(computerSelection)
+    return console.log(playRound(playerSelection, computerSelection))
+  }
   
-  let playerInput = prompt("rock, paper, or scissors ?");
-  const playerSelection = playerInput.toLowerCase();
-  console.log(playerSelection)
-  const computerSelection = getComputerChoice();
-  console.log(computerSelection)
-  console.log(playRound(playerSelection, computerSelection));
-  playRound()
+  
+ playGame();
+ playGame();
+ playGame();
+ playGame();
+ playGame();

@@ -2,11 +2,11 @@ const choice = ["rock", "paper", "scissors"];
 let playerScore = compScore = 0;
 
 const container = document.querySelector('#container');
-const results = document.querySelector(".results")
+const results = document.querySelector(".results");
 results.textContent = "";
 const description = document.createElement("div");
 description.textContent = "Choose a button to see if you win";
-const score = document.createElement("div")
+const score = document.createElement("div");
 
 
 const buttonRock = document.createElement("button");
@@ -46,7 +46,7 @@ function getComputerChoice() {
 }
 
 function updateScore() {
-    return score.textContent = `Player - ${playerScore} , ${compScore} - Computer`
+    return score.textContent = `Player - ${playerScore} , ${compScore} - Computer`;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -74,28 +74,23 @@ function playRound(playerSelection, computerSelection) {
         updateScore()
         description.textContent = "Choose a button to see if you win";
     }
-  } 
+} 
 
-  function playGame(playerSelection, computerSelection) {
+function playGame(playerSelection, computerSelection) {
     description.textContent = "";
     return results.textContent = (playRound(playerSelection, computerSelection))
-  }
+}
   
-  function checkChoice(playerSelection) {
-    // const playerSelection = prompt("rock, paper, or scissors ?", "rock").toLowerCase();
-    // console.log(playerSelection)
-    // console.log(choice.includes(playerSelection));
+function checkChoice(playerSelection) {
     const computerSelection = getComputerChoice();
-    // console.log(computerSelection)
-   if (choice.includes(playerSelection) === true ) {
+    if (choice.includes(playerSelection) === true ) {
     playGame(playerSelection, computerSelection);
    } else {
         alert("Please make a valid choice");
-        checkChoice()
    }
-  }
+}
 
-  function checkForWinner() {
+function checkForWinner() {
     if (playerScore === 5) {
         return description.textContent = `You beat the computer!!! Press any button to start again`
     } else if (compScore === 5) {

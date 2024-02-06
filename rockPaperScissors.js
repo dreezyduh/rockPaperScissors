@@ -56,8 +56,8 @@ function playRound(playerSelection, computerSelection) {
             updateScore()
             return "It's a Tie!";
         } else if ((computerSelection === "rock" && playerSelection === "paper") 
-                || (computerSelection === "paper" && playerSelection === "scissors") 
-                || (computerSelection === "scissors" && playerSelection === "rock")) {
+        || (computerSelection === "paper" && playerSelection === "scissors") 
+        || (computerSelection === "scissors" && playerSelection === "rock")) {
             playerScore += 1;
             checkForWinner()
             updateScore()
@@ -80,14 +80,14 @@ function playGame(playerSelection, computerSelection) {
     description.textContent = "";
     return results.textContent = (playRound(playerSelection, computerSelection))
 }
-  
+
 function checkChoice(playerSelection) {
     const computerSelection = getComputerChoice();
     if (choice.includes(playerSelection) === true ) {
-    playGame(playerSelection, computerSelection);
-   } else {
+        playGame(playerSelection, computerSelection);
+    } else {
         alert("Please make a valid choice");
-   }
+    }
 }
 
 function checkForWinner() {
